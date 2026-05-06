@@ -10,12 +10,33 @@ public class Quartermaster extends GuildMember {
     }
 
     public void requestSupplies(String topic, String payload) {
-        // TODO: send a supply-related message through the mediator.
         getMediator().dispatch(topic, this, payload);
     }
 
     @Override
     public void receive(String topic, GuildMember from, String payload) {
-        // TODO: react to a guild-hall message without calling another colleague directly.
+        String sender = from == null ? "system" : from.getName();
+        switch (topic) {
+            case "orders":
+                System.out.println("    " + getName() + " (Quartermaster): packing gear for order from "
+                        + sender + " - \"" + payload + "\"");
+                break;
+            case "healing":
+                System.out.println("    " + getName() + " (Quartermaster): pulling potions and bandages for "
+                        + sender + " - \"" + payload + "\"");
+                break;
+            case "rewards":
+                System.out.println("    " + getName() + " (Quartermaster): logging reward bundle from "
+                        + sender + " - \"" + payload + "\"");
+                break;
+            case "urgent":
+                System.out.println("    " + getName() + " (Quartermaster): EMERGENCY supplies queued ["
+                        + sender + "] - \"" + payload + "\"");
+                break;
+            default:
+                System.out.println("    " + getName() + " (Quartermaster): noted '" + topic + "' from "
+                        + sender);
+                break;
+        }
     }
 }
