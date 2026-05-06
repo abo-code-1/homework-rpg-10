@@ -5,7 +5,7 @@
 ## Branch: feature/iterator-pattern
 
 - [x] Step 1 — Implement `OrderedQuestIterator.hasNext()` / `next()`
-- [ ] Step 2 — Implement `ReverseQuestIterator.hasNext()` / `next()`
+- [x] Step 2 — Implement `ReverseQuestIterator.hasNext()` / `next()`
 - [ ] Step 3 — Implement `PriorityQuestIterator.hasNext()` / `next()`
 
 ## Branch: feature/mediator-pattern
