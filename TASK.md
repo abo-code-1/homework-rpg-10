@@ -6,11 +6,11 @@
 
 - [x] Step 1 — Implement `OrderedQuestIterator.hasNext()` / `next()`
 - [x] Step 2 — Implement `ReverseQuestIterator.hasNext()` / `next()`
-- [ ] Step 3 — Implement `PriorityQuestIterator.hasNext()` / `next()`
+- [x] Step 3 — Implement `PriorityQuestIterator.hasNext()` / `next()`
 
 ## Branch: feature/mediator-pattern
 
-- [ ] Step 4 — Implement `GuildHall.register()` (topic subscriptions) and `dispatch()` (topic fan-out)
+- [x] Step 4 — Implement `GuildHall.register()` (topic subscriptions) and `dispatch()` (topic fan-out)
 - [ ] Step 5 — Implement `Quartermaster.receive()` and meaningful supply behavior
 - [ ] Step 6 — Implement `Scout.receive()` and meaningful scouting behavior
 - [ ] Step 7 — Implement `Healer.receive()` and meaningful healing behavior
