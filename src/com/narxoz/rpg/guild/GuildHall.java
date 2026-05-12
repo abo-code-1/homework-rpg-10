@@ -36,6 +36,11 @@ public class GuildHall implements GuildMediator {
             addSubscriber("scouting", member);
             addSubscriber("healing", member);
             addSubscriber("urgent", member);
+        } else if (member instanceof Loremaster) {
+            addSubscriber("lore", member);
+            addSubscriber("curse", member);
+            addSubscriber("history", member);
+            addSubscriber("urgent", member);
         }
         System.out.println("[GuildHall] Registered " + member.getName()
                 + " (" + member.getClass().getSimpleName() + ")");

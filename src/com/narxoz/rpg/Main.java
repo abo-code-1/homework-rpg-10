@@ -6,6 +6,7 @@ import com.narxoz.rpg.council.CouncilRunResult;
 import com.narxoz.rpg.guild.Captain;
 import com.narxoz.rpg.guild.GuildHall;
 import com.narxoz.rpg.guild.Healer;
+import com.narxoz.rpg.guild.Loremaster;
 import com.narxoz.rpg.guild.Quartermaster;
 import com.narxoz.rpg.guild.Scout;
 import com.narxoz.rpg.quest.Quest;
@@ -39,6 +40,7 @@ public class Main {
         new Scout("Lirien", hall);
         new Healer("Maelis", hall);
         new Captain("Thane", hall);
+        new Loremaster("Erevan", hall);
 
         System.out.println();
         System.out.println("Reverse roll call (newest quest first):");
@@ -54,6 +56,19 @@ public class Main {
 
         CouncilEngine engine = new CouncilEngine();
         CouncilRunResult result = engine.runCouncil(party, log, hall);
+
+        System.out.println();
+        System.out.println("-- Part 4 extension: reward-sorted iteration --");
+        QuestIterator byReward = log.rewardSorted();
+        while (byReward.hasNext()) {
+            Quest quest = byReward.next();
+            System.out.println("  " + quest.getRewardGold() + "g - " + quest.getTitle());
+        }
+
+        System.out.println();
+        System.out.println("-- Part 4 extension: Loremaster routing --");
+        hall.dispatch("lore", null, "Translate ancient sigil found on the troll's hammer");
+        hall.dispatch("curse", null, "Hex Storm radiates necrotic decay");
 
         System.out.println();
         System.out.println("Final " + result);
