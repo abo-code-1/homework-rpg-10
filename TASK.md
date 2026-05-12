@@ -14,7 +14,7 @@
 - [x] Step 5 — Implement `Quartermaster.receive()` and meaningful supply behavior
 - [x] Step 6 — Implement `Scout.receive()` and meaningful scouting behavior
 - [x] Step 7 — Implement `Healer.receive()` and meaningful healing behavior
-- [ ] Step 8 — Implement `Captain.receive()` and meaningful command behavior
+- [x] Step 8 — Implement `Captain.receive()` and meaningful command behavior
 
 ## Branch: feature/demo-and-extensions
 
