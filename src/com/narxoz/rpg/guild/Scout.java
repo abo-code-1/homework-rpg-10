@@ -10,12 +10,29 @@ public class Scout extends GuildMember {
     }
 
     public void reportRoute(String topic, String payload) {
-        // TODO: send a scouting message through the mediator.
         getMediator().dispatch(topic, this, payload);
     }
 
     @Override
     public void receive(String topic, GuildMember from, String payload) {
-        // TODO: react to a guild-hall message without calling another colleague directly.
+        String sender = from == null ? "system" : from.getName();
+        switch (topic) {
+            case "orders":
+                System.out.println("    " + getName() + " (Scout): plotting route for order from "
+                        + sender + " - \"" + payload + "\"");
+                break;
+            case "supplies":
+                System.out.println("    " + getName() + " (Scout): marking safe path for supply run from "
+                        + sender + " - \"" + payload + "\"");
+                break;
+            case "urgent":
+                System.out.println("    " + getName() + " (Scout): SPRINTING ahead to scout danger ["
+                        + sender + "] - \"" + payload + "\"");
+                break;
+            default:
+                System.out.println("    " + getName() + " (Scout): noted '" + topic + "' from "
+                        + sender);
+                break;
+        }
     }
 }
