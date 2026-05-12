@@ -18,5 +18,5 @@
 
 ## Branch: feature/demo-and-extensions
 
-- [ ] Step 9 — Implement `CouncilEngine.runCouncil()` and `Main.java` end-to-end demo
+- [x] Step 9 — Implement `CouncilEngine.runCouncil()` and `Main.java` end-to-end demo
 - [ ] Step 10 — Add `RewardSortedQuestIterator` + `Loremaster` (Part 4 open/closed proof)
