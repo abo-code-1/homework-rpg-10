@@ -13,7 +13,7 @@
 - [x] Step 4 — Implement `GuildHall.register()` (topic subscriptions) and `dispatch()` (topic fan-out)
 - [x] Step 5 — Implement `Quartermaster.receive()` and meaningful supply behavior
 - [x] Step 6 — Implement `Scout.receive()` and meaningful scouting behavior
-- [ ] Step 7 — Implement `Healer.receive()` and meaningful healing behavior
+- [x] Step 7 — Implement `Healer.receive()` and meaningful healing behavior
 - [ ] Step 8 — Implement `Captain.receive()` and meaningful command behavior
 
 ## Branch: feature/demo-and-extensions
