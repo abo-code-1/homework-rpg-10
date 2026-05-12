@@ -10,12 +10,33 @@ public class Captain extends GuildMember {
     }
 
     public void issueOrder(String topic, String payload) {
-        // TODO: send a command message through the mediator.
         getMediator().dispatch(topic, this, payload);
     }
 
     @Override
     public void receive(String topic, GuildMember from, String payload) {
-        // TODO: react to a guild-hall message without calling another colleague directly.
+        String sender = from == null ? "system" : from.getName();
+        switch (topic) {
+            case "supplies":
+                System.out.println("    " + getName() + " (Captain): approving supply request from "
+                        + sender + " - \"" + payload + "\"");
+                break;
+            case "scouting":
+                System.out.println("    " + getName() + " (Captain): adjusting battle plan on intel from "
+                        + sender + " - \"" + payload + "\"");
+                break;
+            case "healing":
+                System.out.println("    " + getName() + " (Captain): pulling unit back for aid from "
+                        + sender + " - \"" + payload + "\"");
+                break;
+            case "urgent":
+                System.out.println("    " + getName() + " (Captain): SOUNDING general alarm [" + sender
+                        + "] - \"" + payload + "\"");
+                break;
+            default:
+                System.out.println("    " + getName() + " (Captain): noted '" + topic + "' from "
+                        + sender);
+                break;
+        }
     }
 }
